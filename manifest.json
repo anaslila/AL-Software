@@ -1,7 +1,7 @@
 {
-    "name": "AL Software - Professional Dashboard",
+    "name": "AL Software Dashboard v2.1.0",
     "short_name": "AL Software",
-    "description": "Professional dashboard showcasing masterpieces of web and app development by AL Software",
+    "description": "Professional dashboard showcasing masterpieces of web and app development by AL Software. Install for app-like experience.",
     "start_url": "/",
     "display": "standalone",
     "background_color": "#F7F7F7",
@@ -10,21 +10,99 @@
     "scope": "/",
     "icons": [
         {
-            "src": "https://i.postimg.cc/mrqz7KtQ/AL-Software.png",
+            "src": "https://i.postimg.cc/4NzMKhWS/Generated-Image-October-04-2025-1-26-PM-removebg-preview.png",
             "sizes": "192x192",
             "type": "image/png",
             "purpose": "any maskable"
         },
         {
-            "src": "https://i.postimg.cc/mrqz7KtQ/AL-Software.png",
+            "src": "https://i.postimg.cc/4NzMKhWS/Generated-Image-October-04-2025-1-26-PM-removebg-preview.png",
             "sizes": "512x512",
             "type": "image/png",
             "purpose": "any maskable"
+        },
+        {
+            "src": "https://i.postimg.cc/4NzMKhWS/Generated-Image-October-04-2025-1-26-PM-removebg-preview.png",
+            "sizes": "384x384",
+            "type": "image/png",
+            "purpose": "any"
+        },
+        {
+            "src": "https://i.postimg.cc/4NzMKhWS/Generated-Image-October-04-2025-1-26-PM-removebg-preview.png",
+            "sizes": "256x256",
+            "type": "image/png",
+            "purpose": "any"
+        },
+        {
+            "src": "https://i.postimg.cc/4NzMKhWS/Generated-Image-October-04-2025-1-26-PM-removebg-preview.png",
+            "sizes": "128x128",
+            "type": "image/png",
+            "purpose": "any"
+        },
+        {
+            "src": "https://i.postimg.cc/4NzMKhWS/Generated-Image-October-04-2025-1-26-PM-removebg-preview.png",
+            "sizes": "96x96",
+            "type": "image/png",
+            "purpose": "any"
         }
     ],
-    "categories": ["business", "productivity", "development", "portfolio"],
+    "categories": ["business", "productivity", "development", "portfolio", "tools"],
     "lang": "en-IN",
     "dir": "ltr",
     "prefer_related_applications": false,
-    "screenshots": []
+    "screenshots": [],
+    "shortcuts": [
+        {
+            "name": "View All Projects",
+            "short_name": "Projects",
+            "description": "Browse all masterpieces",
+            "url": "/?category=all",
+            "icons": [
+                {
+                    "src": "https://i.postimg.cc/4NzMKhWS/Generated-Image-October-04-2025-1-26-PM-removebg-preview.png",
+                    "sizes": "96x96",
+                    "type": "image/png"
+                }
+            ]
+        },
+        {
+            "name": "Web Apps",
+            "short_name": "Web Apps",
+            "description": "View web applications",
+            "url": "/?category=web",
+            "icons": [
+                {
+                    "src": "https://i.postimg.cc/4NzMKhWS/Generated-Image-October-04-2025-1-26-PM-removebg-preview.png",
+                    "sizes": "96x96",
+                    "type": "image/png"
+                }
+            ]
+        },
+        {
+            "name": "Contact",
+            "short_name": "Contact",
+            "description": "Get in touch with AL Software",
+            "url": "/#contact",
+            "icons": [
+                {
+                    "src": "https://i.postimg.cc/4NzMKhWS/Generated-Image-October-04-2025-1-26-PM-removebg-preview.png",
+                    "sizes": "96x96",
+                    "type": "image/png"
+                }
+            ]
+        }
+    ],
+    "share_target": {
+        "action": "/",
+        "method": "GET",
+        "enctype": "application/x-www-form-urlencoded",
+        "params": {
+            "title": "title",
+            "text": "text",
+            "url": "url"
+        }
+    },
+    "display_override": ["standalone", "minimal-ui"],
+    "related_applications": [],
+    "iarc_rating_id": ""
 }

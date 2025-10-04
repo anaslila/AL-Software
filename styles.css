@@ -219,6 +219,42 @@ body {
     opacity: 0.7;
 }
 
+/* About Section */
+.about-section {
+    background-color: #FFFFFF;
+    border-bottom: 2px solid #000000;
+    padding: 40px 0;
+}
+
+.about-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 30px;
+}
+
+.about-content h2 {
+    font-size: 28px;
+    font-weight: bold;
+    color: #000000;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.about-content p {
+    font-size: 15px;
+    color: #333333;
+    line-height: 1.8;
+    margin-bottom: 15px;
+    text-align: center;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.about-content p:last-child {
+    margin-bottom: 0;
+}
+
 /* Category Tabs */
 .category-tabs {
     background-color: #FFFFFF;
@@ -517,6 +553,7 @@ body {
     display: flex;
     gap: 30px;
     margin-bottom: 20px;
+    flex-wrap: wrap;
 }
 
 .modal-stat {
@@ -538,13 +575,21 @@ body {
     font-weight: bold;
 }
 
+.modal-action-buttons {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
 .modal-action-btn {
-    display: inline-block;
-    padding: 15px 40px;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 15px 30px;
     background-color: #000000;
     color: #FFFFFF;
     text-decoration: none;
-    font-size: 16px;
+    font-size: 14px;
     font-weight: bold;
     border: 2px solid #000000;
     cursor: pointer;
@@ -555,6 +600,15 @@ body {
 .modal-action-btn:hover {
     background-color: #FFFFFF;
     color: #000000;
+}
+
+.modal-action-btn svg {
+    width: 20px;
+    height: 20px;
+}
+
+.modal-action-btn svg path {
+    fill: currentColor;
 }
 
 .modal-section {
@@ -614,6 +668,131 @@ body {
     font-size: 12px;
     font-weight: bold;
     text-transform: uppercase;
+}
+
+/* Install App Modal */
+.install-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 3000;
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+
+.install-modal.active {
+    display: flex;
+}
+
+.install-panel {
+    position: relative;
+    background-color: #FFFFFF;
+    border: 3px solid #000000;
+    width: 90%;
+    max-width: 800px;
+    max-height: 85vh;
+    overflow-y: auto;
+    z-index: 3001;
+    animation: slideUp 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.install-content {
+    padding: 50px 40px 40px;
+}
+
+.install-logo {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto 20px;
+}
+
+.install-content h2 {
+    font-size: 28px;
+    font-weight: bold;
+    color: #000000;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.install-subtitle {
+    font-size: 15px;
+    color: #666666;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.install-section {
+    margin-bottom: 35px;
+    padding: 25px;
+    border: 2px solid #000000;
+    background-color: #F7F7F7;
+}
+
+.install-platform-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #000000;
+}
+
+.install-platform-header svg {
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+}
+
+.install-platform-header h3 {
+    font-size: 18px;
+    font-weight: bold;
+    color: #000000;
+}
+
+.install-steps {
+    list-style: none;
+    counter-reset: step-counter;
+    padding-left: 0;
+}
+
+.install-steps li {
+    counter-increment: step-counter;
+    position: relative;
+    padding-left: 40px;
+    margin-bottom: 15px;
+    font-size: 14px;
+    color: #333333;
+    line-height: 1.6;
+}
+
+.install-steps li:last-child {
+    margin-bottom: 0;
+}
+
+.install-steps li::before {
+    content: counter(step-counter);
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 28px;
+    height: 28px;
+    background-color: #000000;
+    color: #FFFFFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.install-steps li strong {
+    color: #000000;
+    font-weight: bold;
 }
 
 /* Notification Toast */
@@ -766,6 +945,10 @@ body {
         align-items: center;
         text-align: center;
     }
+    
+    .modal-action-buttons {
+        justify-content: center;
+    }
 }
 
 @media (max-width: 768px) {
@@ -776,7 +959,8 @@ body {
     .header-container,
     .info-container,
     .tabs-container,
-    .dashboard-container {
+    .dashboard-container,
+    .about-container {
         padding: 0 15px;
     }
     
@@ -798,6 +982,14 @@ body {
         gap: 20px;
     }
     
+    .about-content h2 {
+        font-size: 22px;
+    }
+    
+    .about-content p {
+        font-size: 13px;
+    }
+    
     .tab-btn {
         padding: 12px 20px;
         font-size: 12px;
@@ -808,12 +1000,21 @@ body {
         gap: 15px;
     }
     
-    .modal-content {
+    .modal-content,
+    .install-content {
         padding: 40px 20px 20px;
     }
     
     .modal-title {
         font-size: 24px;
+    }
+    
+    .install-content h2 {
+        font-size: 22px;
+    }
+    
+    .install-section {
+        padding: 20px 15px;
     }
     
     .notification-toast {
@@ -844,6 +1045,15 @@ body {
     
     .modal-features-grid {
         grid-template-columns: 1fr;
+    }
+    
+    .modal-action-buttons {
+        flex-direction: column;
+    }
+    
+    .modal-action-btn {
+        width: 100%;
+        justify-content: center;
     }
 }
 

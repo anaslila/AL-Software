@@ -12,11 +12,12 @@ document.addEventListener('DOMContentLoaded', function() {
     setupCategoryTabs();
     setupModalHandlers();
     registerServiceWorker();
+    logDashboardInfo();
 });
 
 // Initialize Dashboard
 function initializeDashboard() {
-    console.log('AL Software Dashboard v2.0 Initialized');
+    console.log('AL Software Dashboard v2.1.0 Initialized');
     allMasterpieces = typeof masterpieces !== 'undefined' ? masterpieces : [];
     filteredMasterpieces = [...allMasterpieces];
     updateCounts();
@@ -70,7 +71,7 @@ function createAppCard(item, index) {
     
     card.innerHTML = `
         <div class="app-card-header">
-            <img src="${item.logo}" alt="${item.name}" class="app-logo" onerror="this.src='https://i.postimg.cc/mrqz7KtQ/AL-Software.png'">
+            <img src="${item.logo}" alt="${item.name}" class="app-logo" onerror="this.src='https://i.postimg.cc/4NzMKhWS/Generated-Image-October-04-2025-1-26-PM-removebg-preview.png'">
             <div class="app-info">
                 <span class="app-name">${item.name}</span>
                 <span class="app-category">${category}</span>
@@ -108,6 +109,7 @@ function generateModalContent(item) {
     const status = item.status || 'Live';
     const version = item.version || '1.0';
     const developer = item.developer || 'AL Software';
+    const lastUpdated = item.lastUpdated || 'N/A';
     
     // Features Section
     let featuresHTML = '';
@@ -154,9 +156,23 @@ function generateModalContent(item) {
         `;
     }
     
+    // Open Icon SVG
+    const openIcon = `
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+            <path d="M19 19H5V5H12V3H5C3.89 3 3 3.9 3 5V19C3 20.1 3.89 21 5 21H19C20.1 21 21 20.1 21 19V12H19V19ZM14 3V5H17.59L7.76 14.83L9.17 16.24L19 6.41V10H21V3H14Z" fill="currentColor"/>
+        </svg>
+    `;
+    
+    // Install Icon SVG
+    const installIcon = `
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+            <path d="M19 9H15V3H9V9H5L12 16L19 9ZM5 18V20H19V18H5Z" fill="currentColor"/>
+        </svg>
+    `;
+    
     return `
         <div class="modal-header-section">
-            <img src="${item.logo}" alt="${item.name}" class="modal-logo-large" onerror="this.src='https://i.postimg.cc/mrqz7KtQ/AL-Software.png'">
+            <img src="${item.logo}" alt="${item.name}" class="modal-logo-large" onerror="this.src='https://i.postimg.cc/4NzMKhWS/Generated-Image-October-04-2025-1-26-PM-removebg-preview.png'">
             <div class="modal-header-info">
                 <h2 class="modal-title">${item.name}</h2>
                 <p class="modal-subtitle">${category}</p>
@@ -174,11 +190,24 @@ function generateModalContent(item) {
                         <span class="modal-stat-value">${item.publishedDate}</span>
                     </div>
                     <div class="modal-stat">
+                        <span class="modal-stat-label">Last Updated</span>
+                        <span class="modal-stat-value">${lastUpdated}</span>
+                    </div>
+                    <div class="modal-stat">
                         <span class="modal-stat-label">Developer</span>
                         <span class="modal-stat-value">${developer}</span>
                     </div>
                 </div>
-                <a href="${formatURL(item.website)}" target="_blank" rel="noopener noreferrer" class="modal-action-btn">Open Masterpiece</a>
+                <div class="modal-action-buttons">
+                    <a href="${formatURL(item.website)}" target="_blank" rel="noopener noreferrer" class="modal-action-btn">
+                        ${openIcon}
+                        Open Masterpiece
+                    </a>
+                    <button onclick="openInstallModal()" class="modal-action-btn">
+                        ${installIcon}
+                        Install as App (v${version})
+                    </button>
+                </div>
             </div>
         </div>
         
@@ -193,11 +222,29 @@ function generateModalContent(item) {
     `;
 }
 
-// Close Modal
+// Close Detail Modal
 function closeDetailModal() {
     const modal = document.getElementById('detail-modal');
     if (modal) {
         modal.classList.remove('active');
+        document.body.style.overflow = 'auto';
+    }
+}
+
+// Open Install Modal
+function openInstallModal() {
+    const installModal = document.getElementById('install-modal');
+    if (installModal) {
+        installModal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+}
+
+// Close Install Modal
+function closeInstallModal() {
+    const installModal = document.getElementById('install-modal');
+    if (installModal) {
+        installModal.classList.remove('active');
         document.body.style.overflow = 'auto';
     }
 }
@@ -220,6 +267,7 @@ function setupModalHandlers() {
     document.addEventListener('keydown', function(event) {
         if (event.key === 'Escape') {
             closeDetailModal();
+            closeInstallModal();
             closeSearchDropdown();
         }
     });
@@ -280,7 +328,7 @@ function displaySearchResults(results, dropdown) {
     
     dropdown.innerHTML = results.map(item => `
         <div class="search-result-item" onclick="openDetailModal(masterpieces[${allMasterpieces.indexOf(item)}])">
-            <img src="${item.logo}" alt="${item.name}" class="search-result-img" onerror="this.src='https://i.postimg.cc/mrqz7KtQ/AL-Software.png'">
+            <img src="${item.logo}" alt="${item.name}" class="search-result-img" onerror="this.src='https://i.postimg.cc/4NzMKhWS/Generated-Image-October-04-2025-1-26-PM-removebg-preview.png'">
             <div class="search-result-text">
                 <span class="search-result-name">${item.name}</span>
                 <span class="search-result-category">${item.category || 'Web App'}</span>
@@ -409,12 +457,33 @@ function registerServiceWorker() {
     if ('serviceWorker' in navigator) {
         navigator.serviceWorker.register('/sw.js')
             .then(registration => {
-                console.log('Service Worker registered:', registration.scope);
+                console.log('[Service Worker] Registered successfully:', registration.scope);
+                
+                // Check for updates
+                registration.addEventListener('updatefound', () => {
+                    const newWorker = registration.installing;
+                    console.log('[Service Worker] Update found!');
+                    
+                    newWorker.addEventListener('statechange', () => {
+                        if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
+                            console.log('[Service Worker] New version available');
+                            showUpdateNotification();
+                        }
+                    });
+                });
             })
             .catch(error => {
-                console.log('Service Worker registration failed:', error);
+                console.log('[Service Worker] Registration failed:', error);
             });
     }
+}
+
+// Show Update Notification
+function showUpdateNotification() {
+    showToastNotification({
+        title: 'Update Available',
+        message: 'A new version of AL Software Dashboard is available. Refresh to update.'
+    });
 }
 
 // Refresh Dashboard
@@ -438,6 +507,8 @@ window.openDetailModal = function(item) {
 };
 
 window.closeDetailModal = closeDetailModal;
+window.openInstallModal = openInstallModal;
+window.closeInstallModal = closeInstallModal;
 window.refreshDashboard = refreshDashboard;
 
 // Utility: Format Date
@@ -470,7 +541,47 @@ function scrollToTop() {
 }
 
 // Log Dashboard Stats
-console.log('%c AL Software Dashboard v2.0 ', 'background: #000; color: #fff; padding: 5px 10px; font-size: 14px; font-weight: bold;');
-console.log('Total Masterpieces:', allMasterpieces.length);
-console.log('Developer: AL Software');
-console.log('Website: https://alsoftware.vercel.app');
+function logDashboardInfo() {
+    console.log('%c AL Software Dashboard v2.1.0 ', 'background: #000; color: #fff; padding: 5px 10px; font-size: 14px; font-weight: bold;');
+    console.log('%c Total Masterpieces: ' + allMasterpieces.length, 'color: #000; font-weight: bold;');
+    console.log('%c Developer: AL Software', 'color: #666;');
+    console.log('%c Website: https://alsoftware.vercel.app', 'color: #666;');
+    console.log('%c New in v2.1.0: Install App Instructions, Last Updated Date, About Section', 'color: #0066cc; font-weight: bold;');
+}
+
+// Check if app is installed
+function checkIfInstalled() {
+    if (window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone === true) {
+        console.log('[App] Running as installed PWA');
+        return true;
+    }
+    console.log('[App] Running in browser');
+    return false;
+}
+
+// Initialize install detection
+if (checkIfInstalled()) {
+    console.log('%c App is installed! ', 'background: #000; color: #0f0; padding: 5px 10px; font-weight: bold;');
+}
+
+// Listen for app install event
+window.addEventListener('beforeinstallprompt', (e) => {
+    console.log('[Install] App can be installed');
+    // Store the event for later use
+    window.deferredPrompt = e;
+});
+
+// Listen for app installed event
+window.addEventListener('appinstalled', () => {
+    console.log('[Install] App installed successfully');
+    showToastNotification({
+        title: 'Installation Successful!',
+        message: 'AL Software Dashboard has been installed on your device.'
+    });
+});
+
+// Performance monitoring
+window.addEventListener('load', () => {
+    const loadTime = performance.now();
+    console.log(`[Performance] Dashboard loaded in ${Math.round(loadTime)}ms`);
+});

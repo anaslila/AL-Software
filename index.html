@@ -1,1 +1,83 @@
-AL Software
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="AL Software - Master pieces of web development">
+    <meta name="theme-color" content="#ffffff">
+    <title>AL Software</title>
+    <link rel="icon" type="image/png" href="https://i.postimg.cc/mrqz7KtQ/AL-Software.png">
+    <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="container">
+            <img src="https://i.postimg.cc/mrqz7KtQ/AL-Software.png" alt="AL Software Logo" class="logo">
+            <h1>AL Software</h1>
+        </div>
+    </header>
+
+    <!-- Contact Section -->
+    <section class="contact">
+        <div class="container">
+            <h2>Get in Touch</h2>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <span class="label">WhatsApp:</span>
+                    <a href="https://wa.me/918879706046" target="_blank">+91 8879706046</a>
+                </div>
+                <div class="contact-item">
+                    <span class="label">Email:</span>
+                    <a href="mailto:alsoftware@gmail.com">alsoftware@gmail.com</a>
+                </div>
+                <div class="contact-item">
+                    <span class="label">Website:</span>
+                    <a href="https://alsoftware.vercel.app" target="_blank">alsoftware.vercel.app</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Masterpieces Section -->
+    <section class="masterpieces">
+        <div class="container">
+            <h2>Our Masterpieces</h2>
+            <div id="masterpiece-grid" class="grid">
+                <!-- Masterpieces will be loaded here from masters.js -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal for Masterpiece Details -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div id="modal-body">
+                <!-- Details will be loaded here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Notification Popup -->
+    <div id="notification-popup" class="notification-popup">
+        <div class="notification-content">
+            <span class="notification-close">&times;</span>
+            <h3 id="notification-title"></h3>
+            <p id="notification-text"></p>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 AL Software. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="masters.js"></script>
+    <script src="notifications.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

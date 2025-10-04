@@ -1,0 +1,320 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Calibri, 'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;
+    font-size: 8px;
+    background-color: #ffffff;
+    color: #000000;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Header Styles */
+header {
+    background-color: #ffffff;
+    border-bottom: 1px solid #000000;
+    padding: 15px 0;
+    text-align: center;
+}
+
+header .container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+.logo {
+    width: 60px;
+    height: auto;
+}
+
+header h1 {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* Contact Section */
+.contact {
+    padding: 30px 0;
+    border-bottom: 1px solid #000000;
+}
+
+.contact h2 {
+    font-size: 18px;
+    margin-bottom: 20px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+}
+
+.contact-item .label {
+    font-weight: bold;
+    min-width: 80px;
+}
+
+.contact-item a {
+    color: #000000;
+    text-decoration: underline;
+}
+
+.contact-item a:hover {
+    text-decoration: none;
+}
+
+/* Masterpieces Section */
+.masterpieces {
+    padding: 30px 0;
+    min-height: 400px;
+}
+
+.masterpieces h2 {
+    font-size: 18px;
+    margin-bottom: 25px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 20px;
+    padding: 10px;
+}
+
+.masterpiece-card {
+    background-color: #ffffff;
+    border: 2px solid #000000;
+    padding: 15px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.masterpiece-card:hover {
+    background-color: #f0f0f0;
+    transform: translateY(-2px);
+}
+
+.masterpiece-card img {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    margin-bottom: 10px;
+}
+
+.masterpiece-card h3 {
+    font-size: 14px;
+    font-weight: bold;
+    word-wrap: break-word;
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.modal-content {
+    background-color: #ffffff;
+    margin: 5% auto;
+    padding: 30px;
+    border: 3px solid #000000;
+    width: 90%;
+    max-width: 600px;
+    position: relative;
+}
+
+.close {
+    position: absolute;
+    right: 15px;
+    top: 10px;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    color: #000000;
+}
+
+.close:hover {
+    color: #666666;
+}
+
+#modal-body {
+    text-align: center;
+}
+
+#modal-body img {
+    width: 120px;
+    height: 120px;
+    object-fit: contain;
+    margin-bottom: 20px;
+}
+
+#modal-body h2 {
+    font-size: 20px;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+#modal-body p {
+    font-size: 14px;
+    margin-bottom: 10px;
+    line-height: 1.8;
+}
+
+#modal-body a {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 25px;
+    background-color: #000000;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+    border: 2px solid #000000;
+    transition: all 0.3s ease;
+}
+
+#modal-body a:hover {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+/* Notification Popup */
+.notification-popup {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    max-width: 450px;
+}
+
+.notification-content {
+    background-color: #ffffff;
+    padding: 25px;
+    border: 3px solid #000000;
+    position: relative;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.notification-close {
+    position: absolute;
+    right: 10px;
+    top: 5px;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+    color: #000000;
+}
+
+.notification-close:hover {
+    color: #666666;
+}
+
+.notification-content h3 {
+    font-size: 16px;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+.notification-content p {
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+/* Footer */
+footer {
+    background-color: #ffffff;
+    border-top: 1px solid #000000;
+    padding: 20px 0;
+    text-align: center;
+    margin-top: 40px;
+}
+
+footer p {
+    font-size: 12px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .grid {
+        grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+        gap: 15px;
+    }
+
+    .masterpiece-card img {
+        width: 60px;
+        height: 60px;
+    }
+
+    header h1 {
+        font-size: 20px;
+    }
+
+    .logo {
+        width: 50px;
+    }
+
+    .modal-content {
+        width: 95%;
+        padding: 20px;
+        margin: 10% auto;
+    }
+
+    .contact-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .contact-item .label {
+        min-width: auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .grid {
+        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+        gap: 10px;
+    }
+
+    header .container {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .contact-info {
+        font-size: 12px;
+    }
+}

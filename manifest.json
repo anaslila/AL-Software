@@ -1,0 +1,29 @@
+{
+    "name": "AL Software",
+    "short_name": "AL Software",
+    "description": "AL Software - Master pieces of web development",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#ffffff",
+    "theme_color": "#ffffff",
+    "orientation": "portrait-primary",
+    "icons": [
+        {
+            "src": "https://i.postimg.cc/mrqz7KtQ/AL-Software.png",
+            "sizes": "192x192",
+            "type": "image/png",
+            "purpose": "any maskable"
+        },
+        {
+            "src": "https://i.postimg.cc/mrqz7KtQ/AL-Software.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "any maskable"
+        }
+    ],
+    "categories": ["business", "productivity", "development"],
+    "lang": "en-IN",
+    "dir": "ltr",
+    "scope": "/",
+    "prefer_related_applications": false
+}

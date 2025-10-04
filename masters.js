@@ -182,7 +182,7 @@ const masterpieces = [
     {
         website: "megatool.vercel.app",
         name: "Mega Tools",
-        logo: "https://vercel.com/api/v0/deployments/dpl_G4HFycgoEeU7bdU9TxQd7toA7MkT/favicon?project=liyrics&readyState=READY&teamId=team_Tt7ATPcphKs18udsygSq5aAe",
+        logo: "https://vercel.com/api/v0/deployments/dpl_A8qdpTGWWwRsUoLCeD5fucfs9n8i/favicon?project=megatools&readyState=READY&teamId=team_Tt7ATPcphKs18udsygSq5aAe",
         description: "All-in-one utility toolbox with 50+ essential tools for developers, designers, and productivity enthusiasts.",
         fullDescription: "Mega Tools is a comprehensive collection of web-based utilities designed to boost productivity. From text converters and color pickers to JSON formatters and QR generators, this toolbox provides instant access to essential tools without installing software. All tools work offline and respect user privacy.",
         publishedDate: "12-07-2025",
@@ -652,3 +652,4 @@ if (typeof module !== 'undefined' && module.exports) {
 console.log('%c Masters.js v2.5.0 Loaded ', 'background: #000; color: #0f0; padding: 5px 10px; font-weight: bold;');
 console.log('%c Total Masterpieces: ' + masterpieces.length, 'font-weight: bold; font-size: 14px;');
 console.log('%c Last Updated: 04-10-2025 ', 'color: #666; font-size: 12px;');
+

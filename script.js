@@ -17,10 +17,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // Initialize Dashboard
 function initializeDashboard() {
-    console.log('AL Software Dashboard v2.1.0 Initialized');
+    console.log('AL Software Dashboard v2.5.0 Initialized');
     allMasterpieces = typeof masterpieces !== 'undefined' ? masterpieces : [];
     filteredMasterpieces = [...allMasterpieces];
     updateCounts();
+    updateCategoryCounters();
 }
 
 // Load and Display Masterpieces
@@ -32,8 +33,8 @@ function loadMasterpieces() {
     if (filteredMasterpieces.length === 0) {
         grid.innerHTML = `
             <div style="grid-column: 1/-1; text-align: center; padding: 60px 20px;">
-                <p style="font-size: 16px; color: #666666;">No masterpieces available yet.</p>
-                <p style="font-size: 13px; color: #999999; margin-top: 10px;">Check back soon for amazing projects!</p>
+                <p style="font-size: 16px; color: #666666; font-weight: bold;">No masterpieces found in this category.</p>
+                <p style="font-size: 13px; color: #999999; margin-top: 10px;">Try selecting a different category or search for specific projects.</p>
             </div>
         `;
         return;
@@ -64,14 +65,14 @@ function createAppCard(item, index) {
     if (item.tags && item.tags.length > 0) {
         tagsHTML = `
             <div class="app-tags">
-                ${item.tags.map(tag => `<span class="app-tag">${tag}</span>`).join('')}
+                ${item.tags.slice(0, 3).map(tag => `<span class="app-tag">${tag}</span>`).join('')}
             </div>
         `;
     }
     
     card.innerHTML = `
         <div class="app-card-header">
-            <img src="${item.logo}" alt="${item.name}" class="app-logo" onerror="this.src='https://i.postimg.cc/4NzMKhWS/Generated-Image-October-04-2025-1-26-PM-removebg-preview.png'">
+            <img src="${item.logo}" alt="${item.name}" class="app-logo" onerror="this.src='https://i.postimg.cc/YhVXKkxG/logo.png'">
             <div class="app-info">
                 <span class="app-name">${item.name}</span>
                 <span class="app-category">${category}</span>
@@ -80,7 +81,7 @@ function createAppCard(item, index) {
         <p class="app-description">${item.description}</p>
         ${tagsHTML}
         <div class="app-meta">
-            <span class="app-date">Published: ${item.publishedDate}</span>
+            <span class="app-date">v${item.version || '1.0'}</span>
             <span class="app-status">${status}</span>
         </div>
     `;
@@ -172,7 +173,7 @@ function generateModalContent(item) {
     
     return `
         <div class="modal-header-section">
-            <img src="${item.logo}" alt="${item.name}" class="modal-logo-large" onerror="this.src='https://i.postimg.cc/4NzMKhWS/Generated-Image-October-04-2025-1-26-PM-removebg-preview.png'">
+            <img src="${item.logo}" alt="${item.name}" class="modal-logo-large" onerror="this.src='https://i.postimg.cc/YhVXKkxG/logo.png'">
             <div class="modal-header-info">
                 <h2 class="modal-title">${item.name}</h2>
                 <p class="modal-subtitle">${category}</p>
@@ -308,6 +309,7 @@ function searchMasterpieces(query) {
         const searchFields = [
             item.name,
             item.description,
+            item.fullDescription || '',
             item.category,
             item.website,
             ...(item.tags || []),
@@ -328,10 +330,10 @@ function displaySearchResults(results, dropdown) {
     
     dropdown.innerHTML = results.map(item => `
         <div class="search-result-item" onclick="openDetailModal(masterpieces[${allMasterpieces.indexOf(item)}])">
-            <img src="${item.logo}" alt="${item.name}" class="search-result-img" onerror="this.src='https://i.postimg.cc/4NzMKhWS/Generated-Image-October-04-2025-1-26-PM-removebg-preview.png'">
+            <img src="${item.logo}" alt="${item.name}" class="search-result-img" onerror="this.src='https://i.postimg.cc/YhVXKkxG/logo.png'">
             <div class="search-result-text">
                 <span class="search-result-name">${item.name}</span>
-                <span class="search-result-category">${item.category || 'Web App'}</span>
+                <span class="search-result-category">${item.category || 'Web App'} • v${item.version || '1.0'}</span>
             </div>
         </div>
     `).join('');
@@ -379,6 +381,31 @@ function filterByCategory(category) {
     }
     
     loadMasterpieces();
+}
+
+// Update Category Counters
+function updateCategoryCounters() {
+    const tabs = document.querySelectorAll('.tab-btn');
+    
+    tabs.forEach(tab => {
+        const category = tab.getAttribute('data-category');
+        let count = 0;
+        
+        if (category === 'all') {
+            count = allMasterpieces.length;
+        } else {
+            count = allMasterpieces.filter(item => {
+                const itemCategory = (item.category || '').toLowerCase();
+                return itemCategory.includes(category);
+            }).length;
+        }
+        
+        // Update tab text to include count
+        const tabText = tab.textContent.split('(')[0].trim();
+        if (category === 'all') {
+            tab.textContent = `${tabText} (${count})`;
+        }
+    });
 }
 
 // Update Counts
@@ -488,10 +515,42 @@ function showUpdateNotification() {
 
 // Refresh Dashboard
 function refreshDashboard() {
+    console.log('[Dashboard] Refreshing...');
+    
+    // Show loading state
+    const grid = document.getElementById('apps-grid');
+    if (grid) {
+        grid.classList.add('loading');
+    }
+    
+    // Reload masterpieces
     allMasterpieces = typeof masterpieces !== 'undefined' ? masterpieces : [];
+    
+    // Re-filter current category
     filterByCategory(currentCategory);
+    
+    // Update category counters
+    updateCategoryCounters();
+    
+    // Clear search
+    const searchInput = document.getElementById('search-input');
+    if (searchInput) {
+        searchInput.value = '';
+    }
     closeSearchDropdown();
-    document.getElementById('search-input').value = '';
+    
+    // Remove loading state
+    setTimeout(() => {
+        if (grid) {
+            grid.classList.remove('loading');
+        }
+        
+        // Show success notification
+        showToastNotification({
+            title: 'Dashboard Refreshed',
+            message: `Loaded ${allMasterpieces.length} projects successfully.`
+        });
+    }, 500);
 }
 
 // Export functions to global scope for inline onclick handlers
@@ -542,11 +601,23 @@ function scrollToTop() {
 
 // Log Dashboard Stats
 function logDashboardInfo() {
-    console.log('%c AL Software Dashboard v2.1.0 ', 'background: #000; color: #fff; padding: 5px 10px; font-size: 14px; font-weight: bold;');
-    console.log('%c Total Masterpieces: ' + allMasterpieces.length, 'color: #000; font-weight: bold;');
-    console.log('%c Developer: AL Software', 'color: #666;');
-    console.log('%c Website: https://alsoftware.vercel.app', 'color: #666;');
-    console.log('%c New in v2.1.0: Install App Instructions, Last Updated Date, About Section', 'color: #0066cc; font-weight: bold;');
+    console.log('%c AL Software Dashboard v2.5.0 ', 'background: #000; color: #0f0; padding: 5px 10px; font-size: 16px; font-weight: bold;');
+    console.log('%c Total Masterpieces: ' + allMasterpieces.length, 'color: #000; font-weight: bold; font-size: 14px;');
+    console.log('%c Developer: AL Software', 'color: #666; font-size: 12px;');
+    console.log('%c Website: https://alsoftware.vercel.app', 'color: #666; font-size: 12px;');
+    console.log('%c New in v2.5.0: 15+ Projects, Enhanced About Section, Refresh Button', 'color: #0066cc; font-weight: bold; font-size: 12px;');
+    
+    // Log project categories
+    const categories = {};
+    allMasterpieces.forEach(item => {
+        const cat = item.category || 'Uncategorized';
+        categories[cat] = (categories[cat] || 0) + 1;
+    });
+    
+    console.log('%c Project Categories:', 'font-weight: bold; color: #000;');
+    Object.keys(categories).forEach(cat => {
+        console.log(`  ${cat}: ${categories[cat]} project(s)`);
+    });
 }
 
 // Check if app is installed
@@ -584,4 +655,16 @@ window.addEventListener('appinstalled', () => {
 window.addEventListener('load', () => {
     const loadTime = performance.now();
     console.log(`[Performance] Dashboard loaded in ${Math.round(loadTime)}ms`);
+    console.log(`[Performance] ${allMasterpieces.length} projects loaded`);
 });
+
+// Analytics tracking (placeholder for future)
+function trackEvent(eventName, eventData) {
+    console.log('[Analytics]', eventName, eventData);
+    // Add analytics tracking here (Google Analytics, etc.)
+}
+
+// Track project views
+function trackProjectView(projectName) {
+    trackEvent('project_view', { project: projectName });
+}

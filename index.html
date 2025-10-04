@@ -3,10 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="AL Software - Professional Dashboard for Web & App Masterpieces">
+    <meta name="description" content="AL Software - Professional Dashboard showcasing 15+ innovative web applications, business tools, and entertainment projects">
     <meta name="theme-color" content="#F7F7F7">
-    <title>AL Software - Dashboard v2.1.0</title>
-    <link rel="icon" type="image/png" href="https://i.postimg.cc/4NzMKhWS/Generated-Image-October-04-2025-1-26-PM-removebg-preview.png">
+    <meta name="author" content="AL Software">
+    <meta name="keywords" content="AL Software, Web Development, PWA, Business Tools, Dashboard, React Apps">
+    <title>AL Software - Professional Dashboard v2.5.0</title>
+    <link rel="icon" type="image/png" href="https://i.postimg.cc/sQsQ0nH5/new-logo.png">
+    <link rel="apple-touch-icon" href="https://i.postimg.cc/sQsQ0nH5/new-logo.png">
     <link rel="manifest" href="manifest.json">
     <link rel="stylesheet" href="styles.css">
 </head>
@@ -15,8 +18,11 @@
     <header class="dashboard-header">
         <div class="header-container">
             <div class="logo-section">
-                <img src="https://i.postimg.cc/4NzMKhWS/Generated-Image-October-04-2025-1-26-PM-removebg-preview.png" alt="AL Software" class="header-logo">
-                <h1>AL Software</h1>
+                <img src="https://i.postimg.cc/sQsQ0nH5/new-logo.png" alt="AL Software" class="header-logo">
+                <div class="logo-text">
+                    <h1>AL Software</h1>
+                    <span class="version-badge">v2.5.0</span>
+                </div>
             </div>
             
             <div class="search-section">
@@ -24,7 +30,7 @@
                     <svg class="search-icon" width="18" height="18" viewBox="0 0 18 18" fill="none">
                         <path d="M12.5 11H11.71L11.43 10.73C12.41 9.59 13 8.11 13 6.5C13 2.91 10.09 0 6.5 0C2.91 0 0 2.91 0 6.5C0 10.09 2.91 13 6.5 13C8.11 13 9.59 12.41 10.73 11.43L11 11.71V12.5L16 17.49L17.49 16L12.5 11ZM6.5 11C4.01 11 2 8.99 2 6.5C2 4.01 4.01 2 6.5 2C8.99 2 11 4.01 11 6.5C11 8.99 8.99 11 6.5 11Z" fill="#000000"/>
                     </svg>
-                    <input type="text" id="search-input" class="search-input" placeholder="Search apps, websites & masterpieces...">
+                    <input type="text" id="search-input" class="search-input" placeholder="Search 15+ apps, websites & masterpieces...">
                     <div id="search-dropdown" class="search-dropdown">
                         <!-- Search results will appear here -->
                     </div>
@@ -70,7 +76,21 @@
             <div class="about-content">
                 <h2>About AL Software</h2>
                 <p>AL Software is a cutting-edge web development studio specializing in creating innovative Progressive Web Applications, business management tools, and custom software solutions. With a passion for technology and design, we transform ideas into powerful digital experiences that help businesses grow and thrive in the modern digital landscape.</p>
-                <p>Our expertise spans across restaurant management systems, e-commerce platforms, real estate tools, and entertainment applications. Every project is crafted with attention to detail, user experience, and performance optimization.</p>
+                <p>Our portfolio spans across 15+ professional applications including restaurant management systems, CRM platforms, e-commerce tools, entertainment apps, real estate solutions, and simulation games. Every project is crafted with attention to detail, user experience, and performance optimization to deliver exceptional results.</p>
+                <div class="about-stats">
+                    <div class="about-stat-box">
+                        <span class="about-stat-number">15+</span>
+                        <span class="about-stat-text">Live Projects</span>
+                    </div>
+                    <div class="about-stat-box">
+                        <span class="about-stat-number">100%</span>
+                        <span class="about-stat-text">PWA Compatible</span>
+                    </div>
+                    <div class="about-stat-box">
+                        <span class="about-stat-number">2025</span>
+                        <span class="about-stat-text">Latest Tech</span>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -78,10 +98,11 @@
     <!-- Dashboard Categories -->
     <section class="category-tabs">
         <div class="tabs-container">
-            <button class="tab-btn active" data-category="all">All Projects</button>
+            <button class="tab-btn active" data-category="all">All Projects (15)</button>
             <button class="tab-btn" data-category="web">Web Apps</button>
             <button class="tab-btn" data-category="mobile">Mobile Apps</button>
-            <button class="tab-btn" data-category="tools">Tools</button>
+            <button class="tab-btn" data-category="tools">Tools & Utilities</button>
+            <button class="tab-btn" data-category="entertainment">Entertainment</button>
         </div>
     </section>
 
@@ -90,7 +111,14 @@
         <div class="dashboard-container">
             <div class="section-header">
                 <h2>Featured Masterpieces</h2>
-                <span class="section-count" id="visible-count">0 items</span>
+                <div class="header-right">
+                    <span class="section-count" id="visible-count">0 items</span>
+                    <button class="refresh-btn" onclick="refreshDashboard()" title="Refresh Dashboard">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                            <path d="M17.65 6.35C16.2 4.9 14.21 4 12 4C7.58 4 4.01 7.58 4.01 12C4.01 16.42 7.58 20 12 20C15.73 20 18.84 17.45 19.73 14H17.65C16.83 16.33 14.61 18 12 18C8.69 18 6 15.31 6 12C6 8.69 8.69 6 12 6C13.66 6 15.14 6.69 16.22 7.78L13 11H20V4L17.65 6.35Z" fill="#000000"/>
+                        </svg>
+                    </button>
+                </div>
             </div>
             
             <div id="apps-grid" class="apps-grid">
@@ -126,7 +154,7 @@
             </button>
             
             <div class="install-content">
-                <img src="https://i.postimg.cc/4NzMKhWS/Generated-Image-October-04-2025-1-26-PM-removebg-preview.png" alt="AL Software" class="install-logo">
+                <img src="https://i.postimg.cc/sQsQ0nH5/new-logo.png" alt="AL Software" class="install-logo">
                 <h2>Install AL Software Dashboard</h2>
                 <p class="install-subtitle">Get app-like experience on your device</p>
                 
@@ -209,9 +237,11 @@
         <div class="footer-container">
             <p>&copy; 2025 AL Software. All Rights Reserved.</p>
             <div class="footer-links">
-                <span>Version 2.1.0</span>
+                <span>Version 2.5.0</span>
                 <span>•</span>
-                <span>Professional Dashboard</span>
+                <span>15 Professional Projects</span>
+                <span>•</span>
+                <span>Updated Oct 2025</span>
             </div>
         </div>
     </footer>

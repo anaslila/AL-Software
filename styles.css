@@ -28,7 +28,7 @@ body {
     margin: 0 auto;
     padding: 0 30px;
     display: grid;
-    grid-template-columns: 300px 1fr 200px;
+    grid-template-columns: 350px 1fr 200px;
     gap: 30px;
     align-items: center;
 }
@@ -40,15 +40,32 @@ body {
 }
 
 .header-logo {
-    width: 50px;
-    height: 50px;
+    width: 60px;
+    height: 60px;
     object-fit: contain;
+}
+
+.logo-text {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
 }
 
 .logo-section h1 {
     font-size: 22px;
     font-weight: bold;
     color: #000000;
+    line-height: 1;
+}
+
+.version-badge {
+    font-size: 11px;
+    padding: 3px 8px;
+    background-color: #000000;
+    color: #FFFFFF;
+    font-weight: bold;
+    display: inline-block;
+    width: fit-content;
 }
 
 /* Search Section */
@@ -169,7 +186,7 @@ body {
 }
 
 .stat-number {
-    font-size: 24px;
+    font-size: 28px;
     font-weight: bold;
     color: #000000;
 }
@@ -251,8 +268,39 @@ body {
     margin-right: auto;
 }
 
-.about-content p:last-child {
-    margin-bottom: 0;
+.about-content p:last-of-type {
+    margin-bottom: 30px;
+}
+
+.about-stats {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.about-stat-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    padding: 20px 40px;
+    border: 2px solid #000000;
+    background-color: #F7F7F7;
+    min-width: 150px;
+}
+
+.about-stat-number {
+    font-size: 32px;
+    font-weight: bold;
+    color: #000000;
+}
+
+.about-stat-text {
+    font-size: 13px;
+    color: #666666;
+    font-weight: 600;
+    text-transform: uppercase;
 }
 
 /* Category Tabs */
@@ -268,6 +316,7 @@ body {
     padding: 0 30px;
     display: flex;
     gap: 0;
+    overflow-x: auto;
 }
 
 .tab-btn {
@@ -281,6 +330,7 @@ body {
     border-right: 2px solid #000000;
     cursor: pointer;
     transition: all 0.3s ease;
+    white-space: nowrap;
 }
 
 .tab-btn:first-child {
@@ -320,10 +370,40 @@ body {
     color: #000000;
 }
 
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
 .section-count {
     font-size: 14px;
     color: #666666;
     font-weight: 600;
+}
+
+.refresh-btn {
+    width: 36px;
+    height: 36px;
+    background-color: #000000;
+    border: 2px solid #000000;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.refresh-btn:hover {
+    background-color: #FFFFFF;
+}
+
+.refresh-btn:hover svg path {
+    fill: #000000;
+}
+
+.refresh-btn svg path {
+    fill: #FFFFFF;
 }
 
 /* Apps Grid - Store Style */
@@ -911,7 +991,7 @@ body {
 /* Responsive Design */
 @media (max-width: 1200px) {
     .header-container {
-        grid-template-columns: 250px 1fr 180px;
+        grid-template-columns: 300px 1fr 180px;
         gap: 20px;
     }
     
@@ -949,6 +1029,15 @@ body {
     .modal-action-buttons {
         justify-content: center;
     }
+
+    .about-stats {
+        gap: 15px;
+    }
+
+    .about-stat-box {
+        padding: 15px 30px;
+        min-width: 130px;
+    }
 }
 
 @media (max-width: 768px) {
@@ -969,8 +1058,13 @@ body {
     }
     
     .header-logo {
-        width: 40px;
-        height: 40px;
+        width: 50px;
+        height: 50px;
+    }
+
+    .version-badge {
+        font-size: 10px;
+        padding: 2px 6px;
     }
     
     .search-input {
@@ -989,6 +1083,14 @@ body {
     .about-content p {
         font-size: 13px;
     }
+
+    .about-stat-number {
+        font-size: 24px;
+    }
+
+    .about-stat-text {
+        font-size: 11px;
+    }
     
     .tab-btn {
         padding: 12px 20px;
@@ -998,6 +1100,17 @@ body {
     .apps-grid {
         grid-template-columns: 1fr;
         gap: 15px;
+    }
+
+    .section-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+
+    .header-right {
+        width: 100%;
+        justify-content: space-between;
     }
     
     .modal-content,
@@ -1032,12 +1145,6 @@ body {
 }
 
 @media (max-width: 480px) {
-    .section-header {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 10px;
-    }
-    
     .modal-stats-row {
         flex-direction: column;
         gap: 15px;
@@ -1054,6 +1161,14 @@ body {
     .modal-action-btn {
         width: 100%;
         justify-content: center;
+    }
+
+    .about-stats {
+        flex-direction: column;
+    }
+
+    .about-stat-box {
+        width: 100%;
     }
 }
 
@@ -1091,4 +1206,9 @@ body {
 .loading {
     opacity: 0.6;
     pointer-events: none;
+}
+
+/* Smooth Transitions */
+* {
+    -webkit-tap-highlight-color: transparent;
 }

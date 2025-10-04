@@ -1,65 +1,78 @@
 {
-    "name": "AL Software Dashboard v2.1.0",
+    "name": "AL Software Dashboard v2.5.0 - 15+ Professional Projects",
     "short_name": "AL Software",
-    "description": "Professional dashboard showcasing masterpieces of web and app development by AL Software. Install for app-like experience.",
+    "description": "Professional portfolio showcasing 15+ innovative web applications, business tools, and entertainment projects. Install for offline access and app-like experience.",
     "start_url": "/",
     "display": "standalone",
     "background_color": "#F7F7F7",
     "theme_color": "#F7F7F7",
     "orientation": "portrait-primary",
     "scope": "/",
+    "id": "com.alsoftware.dashboard",
     "icons": [
         {
-            "src": "https://i.postimg.cc/4NzMKhWS/Generated-Image-October-04-2025-1-26-PM-removebg-preview.png",
+            "src": "https://i.postimg.cc/sQsQ0nH5/new-logo.png",
             "sizes": "192x192",
             "type": "image/png",
             "purpose": "any maskable"
         },
         {
-            "src": "https://i.postimg.cc/4NzMKhWS/Generated-Image-October-04-2025-1-26-PM-removebg-preview.png",
+            "src": "https://i.postimg.cc/sQsQ0nH5/new-logo.png",
             "sizes": "512x512",
             "type": "image/png",
             "purpose": "any maskable"
         },
         {
-            "src": "https://i.postimg.cc/4NzMKhWS/Generated-Image-October-04-2025-1-26-PM-removebg-preview.png",
+            "src": "https://i.postimg.cc/sQsQ0nH5/new-logo.png",
             "sizes": "384x384",
             "type": "image/png",
             "purpose": "any"
         },
         {
-            "src": "https://i.postimg.cc/4NzMKhWS/Generated-Image-October-04-2025-1-26-PM-removebg-preview.png",
+            "src": "https://i.postimg.cc/sQsQ0nH5/new-logo.png",
             "sizes": "256x256",
             "type": "image/png",
             "purpose": "any"
         },
         {
-            "src": "https://i.postimg.cc/4NzMKhWS/Generated-Image-October-04-2025-1-26-PM-removebg-preview.png",
+            "src": "https://i.postimg.cc/sQsQ0nH5/new-logo.png",
             "sizes": "128x128",
             "type": "image/png",
             "purpose": "any"
         },
         {
-            "src": "https://i.postimg.cc/4NzMKhWS/Generated-Image-October-04-2025-1-26-PM-removebg-preview.png",
+            "src": "https://i.postimg.cc/sQsQ0nH5/new-logo.png",
             "sizes": "96x96",
+            "type": "image/png",
+            "purpose": "any"
+        },
+        {
+            "src": "https://i.postimg.cc/sQsQ0nH5/new-logo.png",
+            "sizes": "72x72",
+            "type": "image/png",
+            "purpose": "any"
+        },
+        {
+            "src": "https://i.postimg.cc/sQsQ0nH5/new-logo.png",
+            "sizes": "48x48",
             "type": "image/png",
             "purpose": "any"
         }
     ],
-    "categories": ["business", "productivity", "development", "portfolio", "tools"],
+    "categories": ["business", "productivity", "development", "portfolio", "tools", "entertainment"],
     "lang": "en-IN",
     "dir": "ltr",
     "prefer_related_applications": false,
     "screenshots": [],
     "shortcuts": [
         {
-            "name": "View All Projects",
-            "short_name": "Projects",
-            "description": "Browse all masterpieces",
+            "name": "All Projects",
+            "short_name": "All",
+            "description": "Browse all 15 masterpieces",
             "url": "/?category=all",
             "icons": [
                 {
-                    "src": "https://i.postimg.cc/4NzMKhWS/Generated-Image-October-04-2025-1-26-PM-removebg-preview.png",
+                    "src": "https://i.postimg.cc/sQsQ0nH5/new-logo.png",
                     "sizes": "96x96",
                     "type": "image/png"
                 }
@@ -72,20 +85,46 @@
             "url": "/?category=web",
             "icons": [
                 {
-                    "src": "https://i.postimg.cc/4NzMKhWS/Generated-Image-October-04-2025-1-26-PM-removebg-preview.png",
+                    "src": "https://i.postimg.cc/sQsQ0nH5/new-logo.png",
                     "sizes": "96x96",
                     "type": "image/png"
                 }
             ]
         },
         {
-            "name": "Contact",
+            "name": "Entertainment",
+            "short_name": "Games",
+            "description": "Play simulation games",
+            "url": "/?category=entertainment",
+            "icons": [
+                {
+                    "src": "https://i.postimg.cc/sQsQ0nH5/new-logo.png",
+                    "sizes": "96x96",
+                    "type": "image/png"
+                }
+            ]
+        },
+        {
+            "name": "Tools & Utilities",
+            "short_name": "Tools",
+            "description": "Access productivity tools",
+            "url": "/?category=tools",
+            "icons": [
+                {
+                    "src": "https://i.postimg.cc/sQsQ0nH5/new-logo.png",
+                    "sizes": "96x96",
+                    "type": "image/png"
+                }
+            ]
+        },
+        {
+            "name": "Contact AL Software",
             "short_name": "Contact",
-            "description": "Get in touch with AL Software",
+            "description": "Get in touch with us",
             "url": "/#contact",
             "icons": [
                 {
-                    "src": "https://i.postimg.cc/4NzMKhWS/Generated-Image-October-04-2025-1-26-PM-removebg-preview.png",
+                    "src": "https://i.postimg.cc/sQsQ0nH5/new-logo.png",
                     "sizes": "96x96",
                     "type": "image/png"
                 }
@@ -102,7 +141,11 @@
             "url": "url"
         }
     },
-    "display_override": ["standalone", "minimal-ui"],
+    "display_override": ["standalone", "minimal-ui", "browser"],
     "related_applications": [],
-    "iarc_rating_id": ""
+    "iarc_rating_id": "",
+    "protocol_handlers": [],
+    "note_taking": {
+        "new_note_url": "/"
+    }
 }

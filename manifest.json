@@ -1,7 +1,7 @@
 {
-    "name": "AL Software Dashboard v2.5.0 - 15+ Professional Projects",
+    "name": "AL Software Dashboard v2.7 Experia - 15+ Professional Projects",
     "short_name": "AL Software",
-    "description": "Professional portfolio showcasing 15+ innovative web applications, business tools, and entertainment projects. Install for offline access and app-like experience.",
+    "description": "Professional portfolio showcasing 15+ innovative web applications, business tools, and entertainment projects. Directed by Anas Lila. Install for offline access and app-like experience.",
     "start_url": "/",
     "display": "standalone",
     "background_color": "#F7F7F7",
@@ -118,10 +118,10 @@
             ]
         },
         {
-            "name": "Contact AL Software",
-            "short_name": "Contact",
-            "description": "Get in touch with us",
-            "url": "/#contact",
+            "name": "About AL Software",
+            "short_name": "About",
+            "description": "Learn about AL Software and Director Anas Lila",
+            "url": "/?category=about",
             "icons": [
                 {
                     "src": "https://i.postimg.cc/sQsQ0nH5/new-logo.png",

@@ -1,4 +1,4 @@
-// Masters.js - Your Masterpieces Collection v2.5.0
+// Masters.js - Your Masterpieces Collection v2.7 Experia
 // Edit this file to add, update, or remove your projects
 // Last Updated: 04-10-2025
 
@@ -649,7 +649,8 @@ if (typeof module !== 'undefined' && module.exports) {
 }
 
 // Version Info
-console.log('%c Masters.js v2.5.0 Loaded ', 'background: #000; color: #0f0; padding: 5px 10px; font-weight: bold;');
+console.log('%c Masters.js v2.7 Experia Loaded ', 'background: #000; color: #0f0; padding: 5px 10px; font-weight: bold;');
 console.log('%c Total Masterpieces: ' + masterpieces.length, 'font-weight: bold; font-size: 14px;');
 console.log('%c Last Updated: 04-10-2025 ', 'color: #666; font-size: 12px;');
-
+console.log('%c Director: Anas Lila - AL Software ', 'color: #0066cc; font-weight: bold; font-size: 12px;');
+console.log('%c Font: Trebuchet MS | Design: No Gaps (Seamless Grid) ', 'color: #0066cc; font-size: 11px;');

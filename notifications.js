@@ -1,25 +1,21 @@
-// Notifications.js v2.5.0 - Dashboard Notifications
+// Notifications.js v2.7 Experia - Dashboard Notifications
 // Edit this file to add, update, or remove notifications
 // Keep the array empty [] to disable all notifications
 // Last Updated: 04-10-2025
 
 const notifications = [
     {
-        title: "Welcome to AL Software Dashboard v2.5.0! 🎉",
-        message: "Explore 15+ professional web applications, games, and tools. Install the app for offline access!"
+        title: "Welcome to AL Software Dashboard v2.7 Experia! 🎉",
+        message: "Explore 15+ professional masterpieces. Now with About Us section featuring Director Anas Lila. Install as APK or PWA for offline access!"
     },
     {
-        title: "Website will remain down from 9:00 pm - 11:00 pm on 5th Oct, 2025",
-        message: "This is beta testing version."
+        title: "New in v2.7 Experia ✨",
+        message: "About Us tab added! Learn about AL Software, our 5+ years experience, and meet Director Anas Lila (MBA in Sales, Mumbai)."
     }
     // Add more notifications below following the same format:
     // {
-    //     title: "New Projects Added!",
-    //     message: "Check out our latest masterpieces: Magic Box AI and MRM-ERP system."
-    // },
-    // {
-    //     title: "Feature Update - Refresh Button",
-    //     message: "You can now manually refresh the dashboard to see the latest projects instantly."
+    //     title: "New Feature Announcement",
+    //     message: "Description of the new feature or update."
     // },
 ];
 
@@ -49,99 +45,150 @@ const notifications = [
 // ============================================================================
 
 // ============================================================================
-// NOTIFICATION EXAMPLES FOR v2.5.0
+// NOTIFICATION EXAMPLES FOR v2.7 Experia
 // ============================================================================
 
-// Example 1: Welcome Message (NEW in v2.5.0)
+// Example 1: Welcome Message (NEW in v2.7)
 // {
-//     title: "Welcome to AL Software Dashboard v2.5.0! 🎉",
-//     message: "Explore 15+ professional web applications, games, and tools. Install the app for offline access!",
-//     type: "success",
-//     duration: 12000
-// }
-
-// Example 2: New Projects Announcement
-// {
-//     title: "5 New Projects Launched! 🚀",
-//     message: "Check out Magic Box AI, MRM-ERP, Property Box, Client Manager, and Trip Budget Manager.",
-//     type: "update",
-//     expiresOn: "2025-10-15"
-// }
-
-// Example 3: Feature Highlight
-// {
-//     title: "New Feature: Refresh Button",
-//     message: "Click the refresh button in the header to reload all projects instantly.",
-//     type: "info",
-//     priority: "normal"
-// }
-
-// Example 4: Maintenance Warning
-// {
-//     title: "Scheduled Maintenance Alert",
-//     message: "Dashboard will be unavailable on 10th Oct, 2025 from 2:00 AM - 4:00 AM IST for updates.",
-//     type: "warning",
-//     priority: "high",
-//     persistent: true,
-//     expiresOn: "2025-10-10"
-// }
-
-// Example 5: Success Announcement
-// {
-//     title: "15 Projects Milestone Achieved! 🎊",
-//     message: "AL Software Dashboard now features 15+ professional applications and tools.",
+//     title: "Welcome to AL Software Dashboard v2.7 Experia! 🎉",
+//     message: "Explore 15+ professional masterpieces. Now with About Us section featuring Director Anas Lila!",
 //     type: "success",
 //     duration: 15000
 // }
 
-// Example 6: Project Update
+// Example 2: About Us Feature
 // {
-//     title: "ThynkPOS Updated to v2.5",
-//     message: "New features include enhanced billing, improved UI, and faster performance.",
+//     title: "New in v2.7 Experia ✨",
+//     message: "Click the 'About Us' tab to learn about AL Software, our experience, and meet Director Anas Lila.",
 //     type: "update",
-//     action: {
-//         text: "View Project",
-//         url: "https://thynkpos.vercel.app"
-//     }
+//     duration: 12000
 // }
 
-// Example 7: Category Announcement
+// Example 3: APK Install Feature
 // {
-//     title: "Entertainment Category Added",
-//     message: "Enjoy Bollywood Cinema Simulator and Software Tycoon games in the new Entertainment section.",
-//     type: "info"
-// }
-
-// Example 8: Install Prompt
-// {
-//     title: "Install for Better Experience",
-//     message: "Install AL Software Dashboard on your device for offline access and faster loading.",
+//     title: "Android APK Download Available 📲",
+//     message: "Android users can now download and install the dashboard directly as an APK file!",
 //     type: "info",
-//     priority: "low",
-//     action: {
-//         text: "Learn How",
-//         url: "#install"
-//     }
+//     priority: "high"
 // }
 
-// Example 9: Special Offer/News
+// Example 4: Director Introduction
 // {
-//     title: "Custom Development Services Available",
-//     message: "Need a custom web app or business tool? Contact AL Software for professional development services.",
+//     title: "Meet Our Director - Anas Lila 👔",
+//     message: "MBA in Sales from Mumbai, leading AL Software with 5+ years of experience in delivering 15+ projects.",
 //     type: "info",
-//     persistent: true,
-//     expiresOn: "2025-10-31"
+//     duration: 12000
 // }
 
-// Example 10: Technical Update
+// Example 5: Projects First Priority
 // {
-//     title: "Performance Improvements",
-//     message: "Dashboard now loads 40% faster with optimized caching and lazy loading.",
+//     title: "Projects Take Center Stage 🌟",
+//     message: "v2.7 Experia prioritizes showcasing our 15 masterpieces upfront. About Us is now in a dedicated tab.",
+//     type: "update"
+// }
+
+// Example 6: iOS Install Instructions
+// {
+//     title: "iOS Users: Add to Home Screen 🍎",
+//     message: "Safari users can install the dashboard as a PWA. Open install modal for step-by-step instructions.",
+//     type: "info",
+//     priority: "normal"
+// }
+
+// Example 7: Seamless Grid Design
+// {
+//     title: "New Grid Design - No Gaps! 🎨",
+//     message: "Projects and features now display in a seamless grid with connected borders for a cleaner, more professional look.",
 //     type: "success"
 // }
 
+// Example 8: Search Enhancement
+// {
+//     title: "Search All 15 Projects Instantly 🔍",
+//     message: "Use the search bar to quickly find any project by name, category, technology, or tag.",
+//     type: "info",
+//     duration: 10000
+// }
+
+// Example 9: Client Satisfaction
+// {
+//     title: "100% Client Satisfaction Rate 💯",
+//     message: "Every AL Software project is crafted with attention to detail, performance, and user experience.",
+//     type: "success",
+//     persistent: false
+// }
+
+// Example 10: Contact Information
+// {
+//     title: "Get in Touch with AL Software 📧",
+//     message: "Email: alsoftware@gmail.com | WhatsApp: +91 8879706046 | Website: alsoftware.vercel.app",
+//     type: "info",
+//     duration: 15000
+// }
+
+// Example 11: Technology Stack
+// {
+//     title: "Built with Modern Tech Stack 💻",
+//     message: "HTML5, CSS3, JavaScript, PWA, LocalStorage, IndexedDB, and more cutting-edge technologies.",
+//     type: "info"
+// }
+
+// Example 12: Offline Capability
+// {
+//     title: "Works Offline After Install ⚡",
+//     message: "Once installed, access all 15 projects and the dashboard even without internet connection.",
+//     type: "success",
+//     duration: 12000
+// }
+
+// Example 13: Version Milestone
+// {
+//     title: "v2.7 Experia Released! 🚀",
+//     message: "Major update with About Us section, APK download, enhanced director profile, and projects-first layout.",
+//     type: "update",
+//     priority: "high",
+//     expiresOn: "2025-10-15"
+// }
+
+// Example 14: Experience Highlight
+// {
+//     title: "5+ Years of Excellence 🏆",
+//     message: "AL Software has been delivering innovative web solutions since 2020 with consistent excellence.",
+//     type: "success"
+// }
+
+// Example 15: Refresh Feature
+// {
+//     title: "Dashboard Refresh Button Added 🔄",
+//     message: "Click the refresh icon next to project count to reload all masterpieces instantly.",
+//     type: "info",
+//     duration: 10000
+// }
+
+// Example 16: Font Update
+// {
+//     title: "Trebuchet MS Font Applied 📝",
+//     message: "Clean, professional typography throughout the dashboard for better readability and modern aesthetics.",
+//     type: "update"
+// }
+
+// Example 17: No Gaps Design
+// {
+//     title: "Seamless Grid Design Applied 📐",
+//     message: "All project cards and feature boxes now connect seamlessly with shared borders - no gaps!",
+//     type: "success",
+//     duration: 12000
+// }
+
+// Example 18: Modal Features Fixed
+// {
+//     title: "Key Features Display Enhanced 🎯",
+//     message: "Project detail modals now show features in a seamless grid layout with no spacing gaps.",
+//     type: "update"
+// }
+
 // ============================================================================
-// TIPS FOR EFFECTIVE NOTIFICATIONS IN v2.5.0
+// TIPS FOR EFFECTIVE NOTIFICATIONS IN v2.7 Experia
 // ============================================================================
 // 1. Keep titles short and descriptive (under 50 characters)
 // 2. Messages should be clear and actionable (under 120 characters)
@@ -155,20 +202,29 @@ const notifications = [
 // 10. Don't show too many notifications at once (max 2-3 active)
 // 11. Update or remove outdated notifications regularly
 // 12. Use action buttons to provide more information
-// 13. Welcome messages should highlight key features (15 projects, install)
+// 13. Welcome messages should highlight key features (15 projects, About Us, install)
 // 14. Version-specific updates help users understand what's new
 // 15. Time-sensitive notifications should include specific dates/times
+// 16. Mention Director Anas Lila when appropriate to build brand identity
+// 17. Highlight the "About Us" tab for users interested in company background
+// 18. APK install is a major feature - promote it to Android users
+// 19. Mention Trebuchet MS font and no gaps design in UI update notifications
+// 20. Keep notification count low (2-3 active max) for best user experience
 // ============================================================================
 
 // ============================================================================
 // NOTIFICATION SCHEDULE RECOMMENDATIONS
 // ============================================================================
 // - Welcome message: Show on first visit or major version updates
+// - About Us feature: Announce in first week after v2.7 launch
+// - APK install: Promote to Android users specifically
+// - Director introduction: Show periodically to new visitors
 // - Maintenance notices: 24-48 hours before scheduled downtime
 // - New features: Announce within 1 week of release
 // - Project launches: Announce on launch day and keep for 1-2 weeks
 // - Seasonal/special: Plan ahead for holidays or events
 // - Critical updates: Show immediately and keep until resolved
+// - Design updates: Announce font/grid changes for 1 week after release
 // ============================================================================
 
 // Export for use in script.js
@@ -177,9 +233,10 @@ if (typeof module !== 'undefined' && module.exports) {
 }
 
 // Version Info
-console.log('%c Notifications.js v2.5.0 Loaded ', 'background: #000; color: #0f0; padding: 5px 10px; font-weight: bold;');
+console.log('%c Notifications.js v2.7 Experia Loaded ', 'background: #000; color: #0f0; padding: 5px 10px; font-weight: bold;');
 console.log('%c Active Notifications: ' + notifications.filter(n => n.title && n.message).length, 'font-weight: bold; color: #000;');
-console.log('%c Dashboard: 15+ Projects Showcase ', 'color: #666; font-size: 11px;');
+console.log('%c Dashboard: 15+ Projects | Director: Anas Lila ', 'color: #0066cc; font-size: 11px; font-weight: bold;');
+console.log('%c Font: Trebuchet MS | Design: No Gaps (Seamless Grid) ', 'color: #0066cc; font-size: 11px;');
 
 // Auto-expire check (removes notifications past their date)
 function checkExpiredNotifications() {
@@ -197,7 +254,7 @@ function checkExpiredNotifications() {
     });
     
     if (activeNotifications.length < notifications.length) {
-        console.log('[Notifications v2.5.0] Removed', notifications.length - activeNotifications.length, 'expired notification(s)');
+        console.log('[Notifications v2.7 Experia] Removed', notifications.length - activeNotifications.length, 'expired notification(s)');
     }
     
     return activeNotifications;
@@ -217,7 +274,7 @@ function getNotificationStats() {
         stats.byType[type] = (stats.byType[type] || 0) + 1;
     });
     
-    console.log('[Notifications v2.5.0] Statistics:', stats);
+    console.log('[Notifications v2.7 Experia] Statistics:', stats);
     return stats;
 }
 
@@ -229,3 +286,9 @@ if (typeof window !== 'undefined') {
 
 // Log notification stats on load
 getNotificationStats();
+
+// v2.7 Experia specific features
+console.log('[Notifications v2.7 Experia] New features: About Us tab, Director profile, APK install');
+console.log('[Notifications v2.7 Experia] Projects-first priority layout active');
+console.log('[Notifications v2.7 Experia] Trebuchet MS font applied globally');
+console.log('[Notifications v2.7 Experia] Seamless grid design (no gaps) implemented');

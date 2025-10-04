@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // Initialize Dashboard
 function initializeDashboard() {
-    console.log('AL Software Dashboard v2.5.0 Initialized');
+    console.log('AL Software Dashboard v2.7 Experia Initialized');
     allMasterpieces = typeof masterpieces !== 'undefined' ? masterpieces : [];
     filteredMasterpieces = [...allMasterpieces];
     updateCounts();
@@ -72,7 +72,7 @@ function createAppCard(item, index) {
     
     card.innerHTML = `
         <div class="app-card-header">
-            <img src="${item.logo}" alt="${item.name}" class="app-logo" onerror="this.src='https://i.postimg.cc/YhVXKkxG/logo.png'">
+            <img src="${item.logo}" alt="${item.name}" class="app-logo" onerror="this.src='https://i.postimg.cc/sQsQ0nH5/new-logo.png'">
             <div class="app-info">
                 <span class="app-name">${item.name}</span>
                 <span class="app-category">${category}</span>
@@ -173,7 +173,7 @@ function generateModalContent(item) {
     
     return `
         <div class="modal-header-section">
-            <img src="${item.logo}" alt="${item.name}" class="modal-logo-large" onerror="this.src='https://i.postimg.cc/YhVXKkxG/logo.png'">
+            <img src="${item.logo}" alt="${item.name}" class="modal-logo-large" onerror="this.src='https://i.postimg.cc/sQsQ0nH5/new-logo.png'">
             <div class="modal-header-info">
                 <h2 class="modal-title">${item.name}</h2>
                 <p class="modal-subtitle">${category}</p>
@@ -206,7 +206,7 @@ function generateModalContent(item) {
                     </a>
                     <button onclick="openInstallModal()" class="modal-action-btn">
                         ${installIcon}
-                        Install as App (v${version})
+                        Install as App
                     </button>
                 </div>
             </div>
@@ -330,7 +330,7 @@ function displaySearchResults(results, dropdown) {
     
     dropdown.innerHTML = results.map(item => `
         <div class="search-result-item" onclick="openDetailModal(masterpieces[${allMasterpieces.indexOf(item)}])">
-            <img src="${item.logo}" alt="${item.name}" class="search-result-img" onerror="this.src='https://i.postimg.cc/YhVXKkxG/logo.png'">
+            <img src="${item.logo}" alt="${item.name}" class="search-result-img" onerror="this.src='https://i.postimg.cc/sQsQ0nH5/new-logo.png'">
             <div class="search-result-text">
                 <span class="search-result-name">${item.name}</span>
                 <span class="search-result-category">${item.category || 'Web App'} • v${item.version || '1.0'}</span>
@@ -349,7 +349,7 @@ function closeSearchDropdown() {
     }
 }
 
-// Category Tabs Functionality
+// Category Tabs Functionality - NEW v2.7 Experia
 function setupCategoryTabs() {
     const tabs = document.querySelectorAll('.tab-btn');
     
@@ -361,10 +361,58 @@ function setupCategoryTabs() {
             tabs.forEach(t => t.classList.remove('active'));
             this.classList.add('active');
             
-            // Filter masterpieces
-            filterByCategory(category);
+            // Handle About Us tab
+            if (category === 'about') {
+                showAboutSection();
+            } else {
+                hideAboutSection();
+                filterByCategory(category);
+            }
         });
     });
+}
+
+// Show About Section
+function showAboutSection() {
+    const aboutSection = document.getElementById('about-content');
+    const appsGrid = document.getElementById('apps-grid');
+    const sectionHeader = document.querySelector('.section-header');
+    
+    if (aboutSection) {
+        aboutSection.classList.remove('hidden');
+    }
+    
+    if (appsGrid) {
+        appsGrid.classList.add('hidden');
+    }
+    
+    if (sectionHeader) {
+        sectionHeader.classList.add('hidden');
+    }
+    
+    // Scroll to top
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    
+    console.log('[Dashboard v2.7 Experia] About Us section displayed - Director: Anas Lila');
+}
+
+// Hide About Section
+function hideAboutSection() {
+    const aboutSection = document.getElementById('about-content');
+    const appsGrid = document.getElementById('apps-grid');
+    const sectionHeader = document.querySelector('.section-header');
+    
+    if (aboutSection) {
+        aboutSection.classList.add('hidden');
+    }
+    
+    if (appsGrid) {
+        appsGrid.classList.remove('hidden');
+    }
+    
+    if (sectionHeader) {
+        sectionHeader.classList.remove('hidden');
+    }
 }
 
 // Filter by Category
@@ -389,6 +437,10 @@ function updateCategoryCounters() {
     
     tabs.forEach(tab => {
         const category = tab.getAttribute('data-category');
+        
+        // Skip About Us tab
+        if (category === 'about') return;
+        
         let count = 0;
         
         if (category === 'all') {
@@ -484,23 +536,23 @@ function registerServiceWorker() {
     if ('serviceWorker' in navigator) {
         navigator.serviceWorker.register('/sw.js')
             .then(registration => {
-                console.log('[Service Worker] Registered successfully:', registration.scope);
+                console.log('[Service Worker v2.7 Experia] Registered successfully:', registration.scope);
                 
                 // Check for updates
                 registration.addEventListener('updatefound', () => {
                     const newWorker = registration.installing;
-                    console.log('[Service Worker] Update found!');
+                    console.log('[Service Worker v2.7 Experia] Update found!');
                     
                     newWorker.addEventListener('statechange', () => {
                         if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
-                            console.log('[Service Worker] New version available');
+                            console.log('[Service Worker v2.7 Experia] New version available');
                             showUpdateNotification();
                         }
                     });
                 });
             })
             .catch(error => {
-                console.log('[Service Worker] Registration failed:', error);
+                console.log('[Service Worker v2.7 Experia] Registration failed:', error);
             });
     }
 }
@@ -515,7 +567,7 @@ function showUpdateNotification() {
 
 // Refresh Dashboard
 function refreshDashboard() {
-    console.log('[Dashboard] Refreshing...');
+    console.log('[Dashboard v2.7 Experia] Refreshing...');
     
     // Show loading state
     const grid = document.getElementById('apps-grid');
@@ -527,7 +579,12 @@ function refreshDashboard() {
     allMasterpieces = typeof masterpieces !== 'undefined' ? masterpieces : [];
     
     // Re-filter current category
-    filterByCategory(currentCategory);
+    if (currentCategory === 'about') {
+        // If on About page, just reload
+        showAboutSection();
+    } else {
+        filterByCategory(currentCategory);
+    }
     
     // Update category counters
     updateCategoryCounters();
@@ -601,11 +658,13 @@ function scrollToTop() {
 
 // Log Dashboard Stats
 function logDashboardInfo() {
-    console.log('%c AL Software Dashboard v2.5.0 ', 'background: #000; color: #0f0; padding: 5px 10px; font-size: 16px; font-weight: bold;');
+    console.log('%c AL Software Dashboard v2.7 Experia ', 'background: #000; color: #0f0; padding: 5px 10px; font-size: 16px; font-weight: bold;');
     console.log('%c Total Masterpieces: ' + allMasterpieces.length, 'color: #000; font-weight: bold; font-size: 14px;');
     console.log('%c Developer: AL Software', 'color: #666; font-size: 12px;');
+    console.log('%c Director: Anas Lila (MBA in Sales, Mumbai)', 'color: #666; font-size: 12px;');
     console.log('%c Website: https://alsoftware.vercel.app', 'color: #666; font-size: 12px;');
-    console.log('%c New in v2.5.0: 15+ Projects, Enhanced About Section, Refresh Button', 'color: #0066cc; font-weight: bold; font-size: 12px;');
+    console.log('%c New in v2.7 Experia: About Us Tab, APK Install, Projects First Priority, No Gaps Design', 'color: #0066cc; font-weight: bold; font-size: 12px;');
+    console.log('%c Font: Trebuchet MS | Grid: Seamless (No Gaps)', 'color: #0066cc; font-size: 11px;');
     
     // Log project categories
     const categories = {};
@@ -623,10 +682,10 @@ function logDashboardInfo() {
 // Check if app is installed
 function checkIfInstalled() {
     if (window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone === true) {
-        console.log('[App] Running as installed PWA');
+        console.log('[App v2.7 Experia] Running as installed PWA');
         return true;
     }
-    console.log('[App] Running in browser');
+    console.log('[App v2.7 Experia] Running in browser');
     return false;
 }
 
@@ -637,34 +696,40 @@ if (checkIfInstalled()) {
 
 // Listen for app install event
 window.addEventListener('beforeinstallprompt', (e) => {
-    console.log('[Install] App can be installed');
+    console.log('[Install v2.7 Experia] App can be installed');
     // Store the event for later use
     window.deferredPrompt = e;
 });
 
 // Listen for app installed event
 window.addEventListener('appinstalled', () => {
-    console.log('[Install] App installed successfully');
+    console.log('[Install v2.7 Experia] App installed successfully');
     showToastNotification({
         title: 'Installation Successful!',
-        message: 'AL Software Dashboard has been installed on your device.'
+        message: 'AL Software Dashboard v2.7 Experia has been installed on your device.'
     });
 });
 
 // Performance monitoring
 window.addEventListener('load', () => {
     const loadTime = performance.now();
-    console.log(`[Performance] Dashboard loaded in ${Math.round(loadTime)}ms`);
-    console.log(`[Performance] ${allMasterpieces.length} projects loaded`);
+    console.log(`[Performance v2.7 Experia] Dashboard loaded in ${Math.round(loadTime)}ms`);
+    console.log(`[Performance v2.7 Experia] ${allMasterpieces.length} projects loaded`);
+    console.log(`[Performance v2.7 Experia] Font: Trebuchet MS | No Gaps Design Applied`);
 });
 
 // Analytics tracking (placeholder for future)
 function trackEvent(eventName, eventData) {
-    console.log('[Analytics]', eventName, eventData);
+    console.log('[Analytics v2.7 Experia]', eventName, eventData);
     // Add analytics tracking here (Google Analytics, etc.)
 }
 
 // Track project views
 function trackProjectView(projectName) {
     trackEvent('project_view', { project: projectName });
+}
+
+// Track About Us views
+function trackAboutView() {
+    trackEvent('about_view', { section: 'About Us & Director' });
 }

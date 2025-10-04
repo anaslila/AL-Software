@@ -6,7 +6,7 @@ const masterpieces = [
     {
         website: "thynkpos.vercel.app",
         name: "ThynkPOS",
-        logo: "https://i.postimg.cc/xkm91NMh/thynkpos-logo.png",
+        logo: "https://i.postimg.cc/yxhgMHKq/Untitled-design-1.png",
         description: "Complete restaurant POS system with table management, billing, inventory tracking, and customer management capabilities.",
         fullDescription: "ThynkPOS is a comprehensive Point of Sale system designed specifically for restaurants and hospitality businesses. It provides real-time table management, seamless billing processes, inventory tracking, customer relationship management, and detailed analytics. Built with modern web technologies for fast performance and offline capability.",
         publishedDate: "15-08-2025",

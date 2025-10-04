@@ -3,76 +3,136 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="AL Software - Master pieces of web development">
-    <meta name="theme-color" content="#ffffff">
-    <title>AL Software</title>
+    <meta name="description" content="AL Software - Professional Dashboard for Web & App Masterpieces">
+    <meta name="theme-color" content="#F7F7F7">
+    <title>AL Software - Dashboard</title>
     <link rel="icon" type="image/png" href="https://i.postimg.cc/mrqz7KtQ/AL-Software.png">
     <link rel="manifest" href="manifest.json">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Header Section -->
-    <header>
-        <div class="container">
-            <img src="https://i.postimg.cc/mrqz7KtQ/AL-Software.png" alt="AL Software Logo" class="logo">
-            <h1>AL Software</h1>
+    <!-- Header Dashboard Navigation -->
+    <header class="dashboard-header">
+        <div class="header-container">
+            <div class="logo-section">
+                <img src="https://i.postimg.cc/mrqz7KtQ/AL-Software.png" alt="AL Software" class="header-logo">
+                <h1>AL Software</h1>
+            </div>
+            
+            <div class="search-section">
+                <div class="search-container">
+                    <svg class="search-icon" width="18" height="18" viewBox="0 0 18 18" fill="none">
+                        <path d="M12.5 11H11.71L11.43 10.73C12.41 9.59 13 8.11 13 6.5C13 2.91 10.09 0 6.5 0C2.91 0 0 2.91 0 6.5C0 10.09 2.91 13 6.5 13C8.11 13 9.59 12.41 10.73 11.43L11 11.71V12.5L16 17.49L17.49 16L12.5 11ZM6.5 11C4.01 11 2 8.99 2 6.5C2 4.01 4.01 2 6.5 2C8.99 2 11 4.01 11 6.5C11 8.99 8.99 11 6.5 11Z" fill="#000000"/>
+                    </svg>
+                    <input type="text" id="search-input" class="search-input" placeholder="Search apps, websites & masterpieces...">
+                    <div id="search-dropdown" class="search-dropdown">
+                        <!-- Search results will appear here -->
+                    </div>
+                </div>
+            </div>
+            
+            <div class="header-stats">
+                <div class="stat-item">
+                    <span class="stat-number" id="total-count">0</span>
+                    <span class="stat-label">Total Projects</span>
+                </div>
+            </div>
         </div>
     </header>
 
-    <!-- Contact Section -->
-    <section class="contact">
-        <div class="container">
-            <h2>Get in Touch</h2>
-            <div class="contact-info">
-                <div class="contact-item">
-                    <span class="label">WhatsApp:</span>
-                    <a href="https://wa.me/918879706046" target="_blank">+91 8879706046</a>
-                </div>
-                <div class="contact-item">
-                    <span class="label">Email:</span>
-                    <a href="mailto:alsoftware@gmail.com">alsoftware@gmail.com</a>
-                </div>
-                <div class="contact-item">
-                    <span class="label">Website:</span>
-                    <a href="https://alsoftware.vercel.app" target="_blank">alsoftware.vercel.app</a>
-                </div>
+    <!-- Contact Information Bar -->
+    <section class="info-bar">
+        <div class="info-container">
+            <div class="info-item">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                    <path d="M20 4H4C2.9 4 2.01 4.9 2.01 6L2 18C2 19.1 2.9 20 4 20H20C21.1 20 22 19.1 22 18V6C22 4.9 21.1 4 20 4ZM20 8L12 13L4 8V6L12 11L20 6V8Z" fill="#000000"/>
+                </svg>
+                <a href="mailto:alsoftware@gmail.com">alsoftware@gmail.com</a>
+            </div>
+            <div class="info-item">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                    <path d="M17.472 14.382C17.015 14.154 14.848 13.088 14.437 12.942C14.025 12.797 13.726 12.724 13.427 13.181C13.128 13.638 12.282 14.64 12.021 14.938C11.759 15.237 11.498 15.273 11.041 15.045C10.584 14.817 9.094 14.325 7.322 12.737C5.938 11.5 5.01 9.971 4.749 9.514C4.488 9.057 4.722 8.813 4.95 8.586C5.157 8.379 5.407 8.046 5.635 7.785C5.863 7.524 5.936 7.335 6.081 7.036C6.227 6.737 6.154 6.476 6.04 6.248C5.926 6.02 5.003 3.849 4.628 2.935C4.263 2.047 3.892 2.166 3.616 2.151C3.353 2.137 3.054 2.134 2.755 2.134C2.456 2.134 1.972 2.248 1.56 2.705C1.148 3.162 0 4.195 0 6.366C0 8.537 1.647 10.634 1.875 10.933C2.103 11.232 5.003 15.634 9.338 17.555C10.288 17.982 11.026 18.234 11.599 18.42C12.553 18.723 13.418 18.679 14.101 18.562C14.869 18.432 16.637 17.592 17.012 16.659C17.387 15.726 17.387 14.938 17.273 14.746C17.159 14.554 16.929 14.475 16.472 14.247L17.472 14.382Z" fill="#000000"/>
+                </svg>
+                <a href="https://wa.me/918879706046">+91 8879706046</a>
+            </div>
+            <div class="info-item">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                    <path d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM11 19.93C7.05 19.44 4 16.08 4 12C4 11.38 4.08 10.79 4.21 10.21L9 15V16C9 17.1 9.9 18 11 18V19.93ZM17.9 17.39C17.64 16.58 16.9 16 16 16H15V13C15 12.45 14.55 12 14 12H8V10H10C10.55 10 11 9.55 11 9V7H13C14.1 7 15 6.1 15 5V4.59C17.93 5.78 20 8.65 20 12C20 14.08 19.2 15.97 17.9 17.39Z" fill="#000000"/>
+                </svg>
+                <a href="https://alsoftware.vercel.app" target="_blank">alsoftware.vercel.app</a>
             </div>
         </div>
     </section>
 
-    <!-- Masterpieces Section -->
-    <section class="masterpieces">
-        <div class="container">
-            <h2>Our Masterpieces</h2>
-            <div id="masterpiece-grid" class="grid">
-                <!-- Masterpieces will be loaded here from masters.js -->
-            </div>
+    <!-- Dashboard Categories -->
+    <section class="category-tabs">
+        <div class="tabs-container">
+            <button class="tab-btn active" data-category="all">All Projects</button>
+            <button class="tab-btn" data-category="web">Web Apps</button>
+            <button class="tab-btn" data-category="mobile">Mobile Apps</button>
+            <button class="tab-btn" data-category="tools">Tools</button>
         </div>
     </section>
 
-    <!-- Modal for Masterpiece Details -->
-    <div id="modal" class="modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <div id="modal-body">
-                <!-- Details will be loaded here -->
+    <!-- Main Dashboard Grid -->
+    <main class="dashboard-main">
+        <div class="dashboard-container">
+            <div class="section-header">
+                <h2>Featured Masterpieces</h2>
+                <span class="section-count" id="visible-count">0 items</span>
+            </div>
+            
+            <div id="apps-grid" class="apps-grid">
+                <!-- Apps will be loaded here from masters.js -->
+            </div>
+        </div>
+    </main>
+
+    <!-- Detailed View Modal -->
+    <div id="detail-modal" class="detail-modal">
+        <div class="modal-backdrop"></div>
+        <div class="modal-panel">
+            <button class="modal-close" id="close-modal">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path d="M19 6.41L17.59 5L12 10.59L6.41 5L5 6.41L10.59 12L5 17.59L6.41 19L12 13.41L17.59 19L19 17.59L13.41 12L19 6.41Z" fill="#000000"/>
+                </svg>
+            </button>
+            
+            <div class="modal-content" id="modal-detail-content">
+                <!-- Detailed content will be loaded here -->
             </div>
         </div>
     </div>
 
-    <!-- Notification Popup -->
-    <div id="notification-popup" class="notification-popup">
-        <div class="notification-content">
-            <span class="notification-close">&times;</span>
-            <h3 id="notification-title"></h3>
-            <p id="notification-text"></p>
+    <!-- Notification Toast -->
+    <div id="notification-toast" class="notification-toast">
+        <div class="toast-content">
+            <div class="toast-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                    <path d="M12 22C13.1 22 14 21.1 14 20H10C10 21.1 10.89 22 12 22ZM18 16V11C18 7.93 16.36 5.36 13.5 4.68V4C13.5 3.17 12.83 2.5 12 2.5C11.17 2.5 10.5 3.17 10.5 4V4.68C7.63 5.36 6 7.92 6 11V16L4 18V19H20V18L18 16Z" fill="#000000"/>
+                </svg>
+            </div>
+            <div class="toast-text">
+                <h4 id="toast-title"></h4>
+                <p id="toast-message"></p>
+            </div>
+            <button class="toast-close" id="toast-close">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                    <path d="M19 6.41L17.59 5L12 10.59L6.41 5L5 6.41L10.59 12L5 17.59L6.41 19L12 13.41L17.59 19L19 17.59L13.41 12L19 6.41Z" fill="#000000"/>
+                </svg>
+            </button>
         </div>
     </div>
 
     <!-- Footer -->
-    <footer>
-        <div class="container">
-            <p>&copy; 2025 AL Software. All rights reserved.</p>
+    <footer class="dashboard-footer">
+        <div class="footer-container">
+            <p>&copy; 2025 AL Software. All Rights Reserved.</p>
+            <div class="footer-links">
+                <span>Version 2.0</span>
+                <span>•</span>
+                <span>Professional Dashboard</span>
+            </div>
         </div>
     </footer>
 

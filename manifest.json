@@ -1,12 +1,13 @@
 {
-    "name": "AL Software",
+    "name": "AL Software - Professional Dashboard",
     "short_name": "AL Software",
-    "description": "AL Software - Master pieces of web development",
+    "description": "Professional dashboard showcasing masterpieces of web and app development by AL Software",
     "start_url": "/",
     "display": "standalone",
-    "background_color": "#ffffff",
-    "theme_color": "#ffffff",
+    "background_color": "#F7F7F7",
+    "theme_color": "#F7F7F7",
     "orientation": "portrait-primary",
+    "scope": "/",
     "icons": [
         {
             "src": "https://i.postimg.cc/mrqz7KtQ/AL-Software.png",
@@ -21,9 +22,9 @@
             "purpose": "any maskable"
         }
     ],
-    "categories": ["business", "productivity", "development"],
+    "categories": ["business", "productivity", "development", "portfolio"],
     "lang": "en-IN",
     "dir": "ltr",
-    "scope": "/",
-    "prefer_related_applications": false
+    "prefer_related_applications": false,
+    "screenshots": []
 }

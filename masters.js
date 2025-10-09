@@ -54,6 +54,56 @@ const masterpieces = [
         projectDetails: "ThynkPOS was developed to solve real-world restaurant management challenges. The system handles everything from order taking to payment processing, with special focus on Indian market requirements including GST billing, multiple payment methods, and regional language support. The PWA architecture ensures the system works seamlessly even during internet outages, a critical feature for busy restaurants."
     },
     {
+        website: "primebooks.vercel.app",
+        name: "PRIME BOOKS ERP",
+        logo: "https://i.postimg.cc/sf92fBHm/image.png",
+        description: "Prime Books ERP is a powerful GST Books and Accounting Management system",
+        fullDescription: "Prime Books ERP is a powerful GST Books and Accounting Management system that simplifies the complex world of taxation and financial management. Built with precision and care, this application provides all the essential tools needed to manage invoices, track GST transactions, generate compliance reports, and maintain accurate financial records, all in one place.",
+        publishedDate: "09-10-2025",
+        lastUpdated: "09-10-2025",
+        category: "Web App",
+        status: "Live",
+        version: "1.26",
+        developer: "AL Software",
+        tags: ["GST", "Ledger", "Billing", "Inventory", "Management"],
+        technologies: ["HTML5", "CSS3", "JavaScript", "PWA", "IndexedDB", "LocalStorage"],
+        features: [
+            {
+                title: "Inventory Management",
+                description: "Real-time inventory system"
+            },
+            {
+                title: "Smart Billing",
+                description: "Quick billing with QR code payment integration"
+            },
+            {
+                title: "Inventory Control",
+                description: "Track stock levels and get low-stock alerts"
+            },
+            {
+                title: "Customer Database",
+                description: "Manage customer data and order history"
+            },
+            {
+                title: "Analytics Dashboard",
+                description: "Sales reports and business insights"
+            },
+            {
+                title: "Offline Mode",
+                description: "Works without internet connection"
+            },
+            {
+                title: "Multi-Device Sync",
+                description: "Synchronize data across multiple devices"
+            },
+            {
+                title: "GST Billing",
+                description: "Compliant with Indian GST requirements"
+            }
+        ],
+        projectDetails: "Prime Books ERP represents our vision of making professional accounting accessible to everyone. We have eliminated all barriers, no subscriptions, no limitations, no compromises. Just pure, powerful, and practical software that helps you manage your business better."
+    },
+    {
         website: "inventorypanel.vercel.app",
         name: "Inventory Panel of MICL",
         logo: "https://vercel.com/api/v0/deployments/dpl_4hDYPMgsPZsUoHDXrz8kegH7tsLT/favicon?project=inventorypanel&readyState=READY&teamId=team_Tt7ATPcphKs18udsygSq5aAe",

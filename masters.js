@@ -56,14 +56,14 @@ const masterpieces = [
     {
         website: "immersia.vercel.app",
         name: "Immersia System",
-        logo: "https://i.postimg.cc/8z86tFFg/imersia.png",
+        logo: "https://i.postimg.cc/bw6xbr3W/Imersia-Logo-1.png",
         description: "Advanced inventory and warehouse management system built for modern businesses.",
         fullDescription: "Immersia System is a smart, web-based inventory and warehouse management platform crafted for retail, wholesale, and manufacturing businesses. It simplifies stock control, purchase and sales tracking, supplier and customer management, and reporting — all in a clean, intuitive interface. With real-time updates, barcode integration, and powerful analytics, Immersia helps businesses stay organized and in control of their entire inventory flow.",
         publishedDate: "10-10-2025",
         lastUpdated: "10-10-2025",
         category: "Web App",
         status: "Live",
-        version: "1.0",
+        version: "1.2.6",
         developer: "AL Software",
         tags: ["POS", "Sales", "Billing", "Inventory", "Management"],
         technologies: ["HTML5", "CSS3", "JavaScript", "PWA", "IndexedDB", "LocalStorage"],
@@ -755,3 +755,4 @@ console.log('%c Last Updated: 04-10-2025 ', 'color: #666; font-size: 12px;');
 console.log('%c Director: Anas Lila - AL Software ', 'color: #0066cc; font-weight: bold; font-size: 12px;');
 
 console.log('%c Font: Trebuchet MS | Design: No Gaps (Seamless Grid) ', 'color: #0066cc; font-size: 11px;');
+

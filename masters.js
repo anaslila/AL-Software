@@ -54,6 +54,56 @@ const masterpieces = [
         projectDetails: "ThynkPOS was developed to solve real-world restaurant management challenges. The system handles everything from order taking to payment processing, with special focus on Indian market requirements including GST billing, multiple payment methods, and regional language support. The PWA architecture ensures the system works seamlessly even during internet outages, a critical feature for busy restaurants."
     },
     {
+        website: "imersia.vercel.app",
+        name: "Imersia Inventory",
+        logo: "https://i.postimg.cc/8z86tFFg/imersia.png",
+        description: "Advanced inventory and warehouse management system built for modern businesses.",
+        fullDescription: "Imersia Inventory is a smart, web-based inventory and warehouse management platform crafted for retail, wholesale, and manufacturing businesses. It simplifies stock control, purchase and sales tracking, supplier and customer management, and reporting — all in a clean, intuitive interface. With real-time updates, barcode integration, and powerful analytics, Imersia helps businesses stay organized and in control of their entire inventory flow.",
+        publishedDate: "10-10-2025",
+        lastUpdated: "10-10-2025",
+        category: "Web App",
+        status: "Coming Soon",
+        version: "1.0",
+        developer: "AL Software",
+        tags: ["POS", "Sales", "Billing", "Inventory", "Management"],
+        technologies: ["HTML5", "CSS3", "JavaScript", "PWA", "IndexedDB", "LocalStorage"],
+features: [
+        {
+            title: "Stock Management",
+            description: "Track items, quantities, and stock value in real-time"
+        },
+        {
+            title: "Supplier & Customer Management",
+            description: "Maintain complete records of vendors and buyers"
+        },
+        {
+            title: "Purchase & Sales Tracking",
+            description: "Monitor every transaction with detailed reports"
+        },
+        {
+            title: "Barcode Integration",
+            description: "Generate and scan barcodes for faster inventory control"
+        },
+        {
+            title: "Analytics Dashboard",
+            description: "Visual insights into stock movement and performance"
+        },
+        {
+            title: "Low-Stock Alerts",
+            description: "Get instant notifications before you run out of stock"
+        },
+        {
+            title: "Offline Mode",
+            description: "Continue operations even without internet connection"
+        },
+        {
+            title: "Multi-Device Sync",
+            description: "Access and manage inventory data from any device"
+        }
+    ],
+    projectDetails: "Imersia Inventory was created to help businesses of all sizes manage their inventory operations effortlessly. The system offers real-time visibility of stock levels, smart alerts for reordering, and easy integration with barcode systems. Its Progressive Web App (PWA) build ensures fast performance, offline functionality, and easy installation across devices. Designed for accuracy and efficiency, Imersia is the backbone of modern inventory management."
+},
+    {
         website: "primebooks.vercel.app",
         name: "PRIME BOOKS ERP",
         logo: "https://i.postimg.cc/sf92fBHm/image.png",

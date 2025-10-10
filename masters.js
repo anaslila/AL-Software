@@ -62,7 +62,7 @@ const masterpieces = [
         publishedDate: "10-10-2025",
         lastUpdated: "10-10-2025",
         category: "Web App",
-        status: "Coming Soon",
+        status: "Live",
         version: "1.0",
         developer: "AL Software",
         tags: ["POS", "Sales", "Billing", "Inventory", "Management"],

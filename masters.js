@@ -54,6 +54,36 @@ const masterpieces = [
         projectDetails: "ThynkPOS was developed to solve real-world restaurant management challenges. The system handles everything from order taking to payment processing, with special focus on Indian market requirements including GST billing, multiple payment methods, and regional language support. The PWA architecture ensures the system works seamlessly even during internet outages, a critical feature for busy restaurants."
     },
     {
+        website: "resumyfy-cv.vercel.app",
+        name: "Resumefy",
+        logo: "https://i.postimg.cc/9Q0d7211/image.png",
+        description: "Join thousands of job seekers who trust Resumefy to create professional resumes that stand out.",
+        fullDescription: "At Resumefy, we believe everyone deserves access to professional resume-building tools without barriers. We're committed to providing a completely free, watermark-free platform that empowers job seekers worldwide to create stunning resumes that get results.",
+        publishedDate: "15-10-2025",
+        lastUpdated: "15-10-2025",
+        category: "Web App",
+        status: "Live",
+        version: "1.0",
+        developer: "AL Software",
+        tags: ["Resume", "CV", "My Profile"],
+        technologies: ["HTML5", "CSS3", "JavaScript", "PWA", "IndexedDB", "LocalStorage"],
+        features: [
+            {
+                title: "Resume",
+                description: "Create Resume with range of 50+ mordern themes"
+            },
+            {
+                title: "CV",
+                description: "No payments, lifetime free"
+            },
+            {
+                title: "My Profile",
+                description: "Tracks a detailed analysis about you"
+            },
+        ],
+        projectDetails: "Professional Resume Builder • Lifetime Free • No Watermarks"
+    },
+    {
         website: "immersia.vercel.app",
         name: "Immersia System",
         logo: "https://i.postimg.cc/bw6xbr3W/Imersia-Logo-1.png",
@@ -755,4 +785,5 @@ console.log('%c Last Updated: 04-10-2025 ', 'color: #666; font-size: 12px;');
 console.log('%c Director: Anas Lila - AL Software ', 'color: #0066cc; font-weight: bold; font-size: 12px;');
 
 console.log('%c Font: Trebuchet MS | Design: No Gaps (Seamless Grid) ', 'color: #0066cc; font-size: 11px;');
+
 

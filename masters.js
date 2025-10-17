@@ -54,7 +54,7 @@ const masterpieces = [
         projectDetails: "ThynkPOS was developed to solve real-world restaurant management challenges. The system handles everything from order taking to payment processing, with special focus on Indian market requirements including GST billing, multiple payment methods, and regional language support. The PWA architecture ensures the system works seamlessly even during internet outages, a critical feature for busy restaurants."
     },
     {
-        website: "resumyfy-cv.vercel.app",
+        website: "https://resumefy-cv.vercel.app/",
         name: "Resumefy",
         logo: "https://i.postimg.cc/9Q0d7211/image.png",
         description: "Join thousands of job seekers who trust Resumefy to create professional resumes that stand out.",
@@ -785,5 +785,6 @@ console.log('%c Last Updated: 04-10-2025 ', 'color: #666; font-size: 12px;');
 console.log('%c Director: Anas Lila - AL Software ', 'color: #0066cc; font-weight: bold; font-size: 12px;');
 
 console.log('%c Font: Trebuchet MS | Design: No Gaps (Seamless Grid) ', 'color: #0066cc; font-size: 11px;');
+
 
 
